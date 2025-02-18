@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casquette Fullmetal Alchemist Brotherhood - Anime&Co</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .announcement {
+            background: #f5f5f5;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin: 10px auto;
+        }
+
+        .nav {
+            padding: 15px 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .nav a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .nav span {
+            margin: 0 10px;
+        }
+
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+        }
+
+        .product-gallery {
+            flex: 1;
+            display: flex;
+            gap: 20px;
+        }
+
+        .thumbnails {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            cursor: pointer;
+        }
+
+        .main-image {
+            flex: 1;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain;
+        }
+
+        .product-info {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .color-option {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quantity-input {
+            width: 60px;
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .quantity-btn {
+            padding: 8px 12px;
+            background: none;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            padding: 15px;
+            background: #666;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .add-to-cart:hover {
+            background: #555;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .product-actions a {
+            color: #666;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                flex-direction: column;
+            }
+
+            .product-gallery {
+                flex-direction: column;
+            }
+
+            .thumbnails {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+        }
+        /* Styles généraux */
+footer {
+    background: #1a1a2e; /* Bleu foncé style anime */
+    color: #fff;
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Structure du footer */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Section individuelle */
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+}
+
+/* Titres */
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+    color: #ff4b5c; /* Rouge néon pour style anime */
+}
+
+/* Texte */
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Liens */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ff4b5c;
+    text-decoration: underline;
+}
+
+/* Réseaux sociaux */
+.social-icons a {
+    display: inline-block;
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    background: #ff4b5c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.social-icons a img {
+    width: 24px;
+}
+
+.social-icons a:hover {
+    background: #ff9a8b;
+}
+
+/* Newsletter */
+.newsletter input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.newsletter button {
+    background: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.newsletter button:hover {
+    background: #ff9a8b;
+}
+
+/* Copyright */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 13px;
+    color: #bbb;
+}
+    </style>
+</head>
+<body>
+    
+
+    <header class="header">
+        <div class="announcement">
+            NEW CONCEPT STORE - NEW CONCEPT STORE - NEW CONCEPT STORE - NEW CONCEPT STORE
+        </div>
+    
+
+    <nav class="nav">
+        <a href="#">Home</a>
+        <span>/</span>
+        <a href="#">Boutique</a>
+        <span>/</span>
+        <a href="#">Casquettes</a>
+        <span>/</span>
+        Casquette Fullmetal Alchemist Brotherhood
+    </nav>
+</header>
+
+    <main class="product-container">
+        <div class="product-gallery">
+            <div class="thumbnails">
+                <img src="port-cle.jpeg" alt="Vue 1" class="thumbnail">
+                <img src="objet1.jpeg" alt="Vue 2" class="thumbnail">
+                <img src="Wrist Band with Ring.jpeg" alt="Vue 3" class="thumbnail">
+                <img src="leather.jpeg" alt="Vue 4" class="thumbnail">
+            </div>
+            <div class="main-image">
+                <img src="katana.jpeg">
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1 class="product-title">Casquette Fullmetal Alchemist Brotherhood</h1>
+            <div class="product-price">29,99 €</div>
+            <p class="product-description">
+                On change un peu du style casquette trucker, et on fait dans le style simple et efficace. Marre d'avoir toujours les même styles de casquettes ! La casquette blanche Fullmetal Alchemist Brotherhood est pour vous ! Fans de goûts !
+            </p>
+            <div class="color-option">
+                Gris & rouge
+            </div>
+            <div class="quantity-selector">
+                <button class="quantity-btn">-</button>
+                <input type="number" value="1" min="1" class="quantity-input">
+                <button class="quantity-btn">+</button>
+            </div>
+            <button class="add-to-cart">Ajouter au panier</button>
+            <div class="product-actions">
+                <a href="#" class="wishlist">
+                    <span>♡</span>
+                    Add to wishlist
+                </a>
+                <a href="#" class="compare">
+                    <span>⇄</span>
+                    Compare
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <!-- Section À propos -->
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Bienvenue sur <strong>AnimeWorld</strong>, la boutique dédiée aux accessoires d’anime !</p>
+            </div>
+    
+            <!-- Navigation -->
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#">Boutique</a></li>
+                    <li><a href="#">Promotions</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+    
+            <!-- Réseaux Sociaux -->
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="icon-fb.png" alt="Facebook"></a>
+                    <a href="#"><img src="icon-ig.png" alt="Instagram"></a>
+                    <a href="#"><img src="icon-tt.png" alt="TikTok"></a>
+                </div>
+            </div>
+    
+            <!-- Newsletter -->
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter">
+                    <input type="email" placeholder="Votre email">
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 AnimeWorld - Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
